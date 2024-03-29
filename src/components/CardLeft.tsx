@@ -15,7 +15,7 @@ const CardLeft = () => {
                     <p className='text-[15px] leading-[1.66] font-medium font-deca text-[#939CAA] lg:text-left'>Scoot is available in 4 major cities so far. We’re expanding rapidly, so be sure to let us know if you want to see us in your hometown. We’re aiming to let our scooters loose on 23 cities over the coming year.</p>
                 </div>
                 <div className='w-full flex items-center justify-center lg:justify-start'>
-                    <Button />
+                
                 </div>
             </div>
         </section>

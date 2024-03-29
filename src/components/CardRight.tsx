@@ -33,3 +33,7 @@ const CardRight = ({status}: CardRigthPropsType) => {
 }
 
 export default CardRight
+
+
+
+
