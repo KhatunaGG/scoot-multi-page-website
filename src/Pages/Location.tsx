@@ -1,4 +1,22 @@
 import Button from "../components/Button"
+import { motion } from 'framer-motion'
+
+
+
+const listVariants2 = {
+  visible: {
+    opacity: 1, y: 0, transition: {
+      delay: 0.5,
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+    }
+  },
+  hidden: { opacity: 0, y: 20 }
+}
+
+
+
+
 
 
 const Location = () => {
@@ -10,44 +28,51 @@ const Location = () => {
       ">Location</h1>
         <img className="hidden md:flex mr-[-35px] " src="/assets/patterns/white-circles.svg" alt="" />
       </header>
-
-
       <article className="careers-wrapper w-full px-[32px] md:px-[5.07%] lg:px-[11.45%] flex flex-col pb-[72px]  ">
         <div className="map mt-[72px] mb-[40px] w-full md:h-[337px] md:mt-[144px] lg:h-[543px] lg:mt-[120px] relative">
-
-          <div className="hidden absolute left-[8%] top-[12%] lg:flex" >
+          <motion.div
+            variants={listVariants2}
+            initial={'hidden'}
+            animate={'visible'}
+            className="hidden absolute left-[8%] top-[12%] lg:flex" >
             <div className="relative ">
               <img className="" src="/assets/location.png" alt="" />
-              <span className="absolute top-[25%]  left-[30%]">New York</span>
+              <span className="w-full h-full absolute top-[0]  left-[0] text-[#495567] font-bold flex items-center justify-center mt-[-9px]">New York</span>
             </div>
-          </div>
+          </motion.div>
 
-
-          <div className="hidden absolute left-[34%] top-[3%] lg:flex" >
+          <motion.div
+            variants={listVariants2}
+            initial={'hidden'}
+            animate={'visible'}
+            className="hidden absolute left-[34%] top-[3%] lg:flex" >
             <div className="relative ">
               <img className="" src="/assets/location.png" alt="" />
-              <span className="absolute top-[25%]  left-[30%]">London</span>
+              <span className="w-full h-full absolute top-[0]  left-[0] text-[#495567] font-bold flex items-center justify-center mt-[-9px]">London</span>
             </div>
-          </div>
+          </motion.div>
 
-
-          <div className="hidden absolute right-[-1%] top-[14%] lg:flex" >
+          <motion.div
+            variants={listVariants2}
+            initial={'hidden'}
+            animate={'visible'}
+            className="hidden absolute right-[-1%] top-[14%] lg:flex" >
             <div className="relative ">
               <img className="" src="/assets/location.png" alt="" />
-              <span className="absolute top-[25%] left-[30%]">Yokohama</span>
+              <span className="w-full h-full absolute top-[0]  left-[0] text-[#495567] font-bold flex items-center justify-center mt-[-9px]">Yokohama</span>
             </div>
-          </div>
+          </motion.div>
 
-
-          <div className="hidden absolute right-[7%] top-[46%] lg:flex" >
+          <motion.div
+            variants={listVariants2}
+            initial={'hidden'}
+            animate={'visible'}
+            className="hidden absolute right-[7%] top-[46%] lg:flex" >
             <div className="relative ">
               <img className="" src="/assets/location.png" alt="" />
-              <span className="absolute top-[25%] left-[30%]">Jakarta</span>
+              <span className="w-full h-full absolute top-[0]  left-[0] text-[#495567] font-bold flex items-center justify-center mt-[-9px]">Jakarta</span>
             </div>
-          </div>
-
-
-
+          </motion.div>
         </div>
 
         <div className="w-full flex flex-col items-center justify-center gap-[72px]">
@@ -56,7 +81,6 @@ const Location = () => {
             <button className="w-full bg-[#FFF4DF] text-[24px] leading-[1.16] tracking-[-1.07px] font-bold text-[#495567 py-[22px] px-[100x]">London</button>
             <button className="w-full bg-[#FFF4DF] text-[24px] leading-[1.16] tracking-[-1.07px] font-bold text-[#495567 py-[22px] px-[100x]">Jakarta</button>
             <button className="w-full bg-[#FFF4DF] text-[24px] leading-[1.16] tracking-[-1.07px] font-bold text-[#495567 py-[22px] px-[100x]">Yokohama</button>
-
           </div>
 
           <div className="flex flex-col items-center justify-center gap-8 lg:flex-row ">
@@ -65,11 +89,6 @@ const Location = () => {
             <Button />
           </div>
         </div>
-
-
-
-
-
       </article>
     </>
   )

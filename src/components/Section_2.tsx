@@ -1,5 +1,5 @@
 
-import Button from './Button'
+
 import CardLeft from './CardLeft'
 import CardRight from './CardRight'
 
