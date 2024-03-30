@@ -3,6 +3,8 @@ import { pages } from "../data"
 
 
 const Footer = () => {
+
+    
     return (
         <footer className="footer w-full relative text-white">
             <div className='futter-wrapper px-8 py-[88px] flex flex-col items-center justify-center text-center gap-10 lg:flex-row 

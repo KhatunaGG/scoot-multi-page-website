@@ -15,43 +15,18 @@ type RootPropsType = {
 
 
 
-
-
 const Root = ({ screenWidth }: RootPropsType) => {
     const context = useContext(GlobalState);
     if (!context) return null;
-    const {  open, openSidebar } = context
-
-
-
-
-
+    const { open, openSidebar } = context
 
 
     return (
-
         <div className='hh w-fill flex flex-col items-center justify-center  '>
             <div className="header w-full relative">
                 {open && (
-                   <Overlay />
+                    <Overlay />
                 )}
-                {/* {open && (
-                    <div className="w-full h-[650px]  md:hidden lg:hidden absolute top-[99.67%] left-0 z-50 flex flex-row ">
-                        <div className="overlay w-[68.26%] bg-[#495567] h-[650px] left-0 z-50 px-8 ">
-                            <ul className="w-full pl-8 pt-[64px] flex flex-col gap-6 mb-[339px]">
-                                {pages.map((item, i) => (
-                                    <Link to={`/${item}`} key={i}  >
-                                        <li 
-                                        onClick={() => setOpen(false)}
-                                        className="text-white font-bold tex-[18px] leading-[1.38] capitalize">{item}</li>
-                                    </Link>
-                                ))}
-                            </ul>
-                            <Button />
-                        </div>
-                        <div className="w-[31.73%] bg-[black] opacity-80"></div>
-                    </div>
-                )} */}
                 <div className='header-container flex flex-row items-center py-[22px] px-[32px] md:px-[12.63%] lg:px-[11.45%] md:justify-between'>
                     <div className='logo-container flex w-full justify-center items-center md:gap-[58.18px] md:justify-start relative'>
                         {screenWidth < 376 && (

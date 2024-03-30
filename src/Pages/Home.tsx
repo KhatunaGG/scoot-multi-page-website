@@ -1,13 +1,13 @@
 import Button from "../components/Button";
+import CardLeft from "../components/CardLeft";
+import CardRight from "../components/CardRight";
 import Section_1 from "../components/Section_1";
-import Section_2 from "../components/Section_2";
+
 
 
 
 
 const Home = () => {
-
-
 
 
   return (
@@ -23,7 +23,9 @@ const Home = () => {
               Our bikes are placed in convenient locations in each of our cities. Use our app to locate the nearest bike,
               unlock it with a tap, and you’re away!</p>
             <div className="flex items-start">
-              <Button />
+              <Button
+                status="header"
+              />
             </div>
           </div>
         </div>
@@ -35,16 +37,25 @@ const Home = () => {
         <svg className="hidden md:hidden lg:flex absolute left-[640px] bottom-[165px] " xmlns="http://www.w3.org/2000/svg" width="452" height="151"><g fill="none" fill-rule="evenodd" stroke="#FCB72B" stroke-linejoin="bevel" stroke-width="15"><path d="M407.952 145.444l38.426-38.426-38.426-38.426" /><path d="M0 8h270.115v99.369h176.263" /></g></svg>
         <img className="hidden md:visible md:absolute md:right-[-30px] md:bottom-[51px] md:flex lg:bottom-[176.5px]" src="/assets/patterns/white-circles.svg" alt="" />
       </div>
-      <main className="pt-[120px]">
-        <section className="px-[32px] md:px-[97px] relative flex flex-col gap-[120px] text-[#495567] ">
-          <Section_1 />
-          <Section_2 />
-        </section>
+      <main className="pt-[72px] mb-[120px] md:pt-[144px] lg:pt-[160px] md:mb-[104px] lg:mb-[200px] ">
+        <div className="container w-full  flex flex-col items-center justify-center ">
+          <div className="wrapper flex flex-col items-center justify-center px-[32px] mb-[120px] md:px-[12.63%] lg:px-[11.45%] md:mb-[145px] lg:mb-[200px] ">
+            <Section_1 />
+          </div>
+          <div className="w-full flex flex-col items-center justify-center gap-[120px] lg:gap-[160px]">
+            <CardRight status='home' />
+            <CardLeft status='home' />
+            <CardRight
+              status='home_2'
+            />
+          </div>
+        </div>
       </main>
     </>
   )
 }
 
 export default Home
+
 
 

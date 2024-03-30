@@ -17,9 +17,9 @@ const listVariants2 = {
 
 
 
-
-
 const Location = () => {
+
+
   return (
     <>
       <header className="careers flex items-center justify-center text-white ">
@@ -84,9 +84,9 @@ const Location = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center gap-8 lg:flex-row ">
-            <h3 className="text-[32px] leading-[1] tracking-[-1.43px] font-bold text-[#495567] text-center lg:text-[48px] lg:tracking-[-2.14px] ">Your City Not Listed?</h3>
+            <h3 className="text-[32px] leading-[1] tracking-[-1.43px] font-bold text-[#495567] text-center lg:text-[48px] lg:tracking-[-2.14px] lg:text-left">Your City Not Listed?</h3>
             <p className="text-[15px] leading-[1.66] font-medium font-deca text-center text-[#939CAA]  md:w-[573px] lg:text-left">If you’d like to see Scoot in your hometown, be sure to let us know. We track requests and plan launches based on demand. Feel free to message us by clicking the link or messaging us on social.</p>
-            <Button />
+            <Button status="location" />
           </div>
         </div>
       </article>

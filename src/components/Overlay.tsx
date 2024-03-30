@@ -20,7 +20,6 @@ const listVariants2 = {
 
 
 const Overlay = () => {
-
     const context = useContext(GlobalState);
     if (!context) return null;
     const { setOpen } = context
