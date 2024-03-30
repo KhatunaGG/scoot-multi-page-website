@@ -1,4 +1,3 @@
-import Button from "../components/Button"
 import CardRight from "../components/CardRight"
 import Section_2 from "../components/Section_2"
 import Values from "../components/Values"
