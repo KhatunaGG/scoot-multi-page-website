@@ -15,10 +15,7 @@ const listVariants2 = {
 }
 
 
-
-
 const Location = () => {
-
 
   return (
     <>

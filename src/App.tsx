@@ -24,12 +24,10 @@ export const GlobalState = createContext<GlobalStateType | null>(null);
 function App() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [open, setOpen] = useState(false);
-  console.log(open)
+
 
   const openSidebar = () => {
-    console.log('hi')
     setOpen(!open)
-
   }
 
 

@@ -6,6 +6,12 @@ import Button from './Button';
 import { motion } from 'framer-motion'
 
 
+type OverLayPropsType = {
+    setActive: (value: boolean) => void;
+    active?: boolean;
+}
+
+
 
 const listVariants2 = {
     visible: (i: number) => ({
@@ -19,7 +25,7 @@ const listVariants2 = {
 
 
 
-const Overlay = () => {
+const Overlay = ({setActive, active}: OverLayPropsType ) => {
     const context = useContext(GlobalState);
     if (!context) return null;
     const { setOpen } = context
@@ -39,7 +45,10 @@ const Overlay = () => {
                                 animate={'visible'}
                                 custom={i}
                                 whileHover={{ color: '#FCB72B' }}
-                                onClick={() => setOpen(false)}
+                                onClick={() => {
+                                    setOpen(false)
+                                    setActive(!active)
+                                }}
                                 className="text-white font-bold tex-[18px] leading-[1.38] capitalize hover:text-[#FCB72B]">{item}</motion.li>
                         </Link>
                     ))}

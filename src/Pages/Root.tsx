@@ -1,12 +1,11 @@
-
 import { GlobalState } from '../App';
 import { Link, Outlet } from 'react-router-dom'
 import Button from '../components/Button'
 import Footer from '../components/Footer';
 import { pages } from '../../src/data'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Overlay from '../components/Overlay';
-
+import { motion } from 'framer-motion'
 
 
 type RootPropsType = {
@@ -16,29 +15,64 @@ type RootPropsType = {
 
 
 const Root = ({ screenWidth }: RootPropsType) => {
+    const [active, setActive] = useState(false)
+    
     const context = useContext(GlobalState);
     if (!context) return null;
-    const { open, openSidebar } = context
+    const { open, openSidebar } = context;
 
 
     return (
         <div className='hh w-fill flex flex-col items-center justify-center  '>
             <div className="header w-full relative">
                 {open && (
-                    <Overlay />
+                    <Overlay active={active} setActive={setActive} />
                 )}
                 <div className='header-container flex flex-row items-center py-[22px] px-[32px] md:px-[12.63%] lg:px-[11.45%] md:justify-between'>
                     <div className='logo-container flex w-full justify-center items-center md:gap-[58.18px] md:justify-start relative'>
                         {screenWidth < 376 && (
-                            <svg
-                                onClick={() => openSidebar()}
-                                className='absolute top-[50%] translate-y-[-25%] left-0' width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g id="burger">
-                                    <rect id="Rectangle" width="19.6923" height="3.69231" fill="#FCB72B" />
-                                    <rect id="Rectangle Copy" y="6.15381" width="19.6923" height="3.69231" fill="#FCB72B" />
-                                    <rect id="Rectangle Copy 2" y="12.3077" width="19.6923" height="3.69231" fill="#FCB72B" />
-                                </g>
-                            </svg>
+                            <div className='absolute top-[50%] translate-y-[-25%] left-0'>
+                                <motion.div
+                                    onClick={() => {
+                                        setActive(prev => !prev);
+                                        openSidebar()
+                                    }}
+                                    animate={active ? 'open' : 'closed'}
+                                    className="burger-container flex flex-col  ">
+
+                                    <motion.div
+                                        variants={{
+                                            open: { rotate: '45deg', y: 5.8 },
+                                            closed: { rotate: '0deg', y: 0 },
+                                        }}
+                                        transition={{
+                                            duration: 0.5,
+                                            ease: 'easeInOut'
+                                        }}
+                                        className='w-[20px] h-[3px] m-[1.5px] rounded-[2px] bg-[#FCB72B]'>
+                                    </motion.div>
+
+                                    <motion.div
+                                        variants={{
+                                            closed: { opacity: 1 },
+                                            open: { opacity: 0 }
+                                        }}
+                                        className='w-[20px] h-[3px] m-[1.5px] rounded-[2px] bg-[#FCB72B]'>
+                                    </motion.div>
+
+                                    <motion.div
+                                        variants={{
+                                            open: { rotate: '-45deg', y: -5.9 },
+                                            closed: { rotate: '0deg', y: 0 },
+                                        }}
+                                        transition={{
+                                            duration: 0.5,
+                                            ease: 'easeInOut'
+                                        }}
+                                        className='w-[20px] h-[3px] m-[1.5px] rounded-[2px] bg-[#FCB72B]'>
+                                    </motion.div>
+                                </motion.div>
+                            </div>
                         )}
                         <Link to={'/'}>
                             <svg width="108" height="29" viewBox="0 0 108 29" fill="none" xmlns="http://www.w3.org/2000/svg">

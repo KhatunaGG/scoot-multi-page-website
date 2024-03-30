@@ -1,7 +1,6 @@
 import { useState } from "react"
 
 
-
 const FaqSection = () => {
     const [number, setNumber] = useState(0)
 

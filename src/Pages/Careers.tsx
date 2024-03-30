@@ -4,9 +4,9 @@ import Values from "../components/Values"
 
 
 const Careers = () => {
+  
   return (
     <>
-
       <header className="careers flex items-center justify-center ">
         <h1 className="text-[40px] leading-[1] tracking-[-1.79px] font-bold md:text-[56px] md:tracking-[-2.5px] md:flex-row md:w-full md:pl-[97px] lg:pl-[165px] text-white">Careers</h1>
         <img className="hidden md:flex mr-[-35px] " src="/assets/patterns/white-circles.svg" alt="" />

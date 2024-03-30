@@ -45,9 +45,7 @@ const Home = () => {
           <div className="w-full flex flex-col items-center justify-center gap-[120px] lg:gap-[160px]">
             <CardRight status='home' />
             <CardLeft status='home' />
-            <CardRight
-              status='home_2'
-            />
+            <CardRight status='home_2'/>
           </div>
         </div>
       </main>
